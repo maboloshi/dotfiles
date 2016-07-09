@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract z python pip ruby rails adb gem go brew brew-cask mysql-macports)
+plugins=(git extract z python pip ruby rails adb gem go brew brew-cask mysql-macports vagrant)
 
 # User configuration
 
@@ -103,11 +103,35 @@ export PATH=$COCOS_X_ROOT:$PATH
 export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export ANDROID_JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 export ANDROID_SDK=/Users/coderzh/Library/Android/sdk
 export PATH=$ANDROID_SDK/platform-tools:$PATH
+
+export ANDROID_BUILD_TOOLS=~/Library/Android/sdk/build-tools/23.0.2
+export PATH=$ANDROID_BUILD_TOOLS:$PATH
+
+export ANDROID_NDK=~/Library/Android/android-ndk-r9d
+export PATH=$ANDROID_NDK:$PATH
 
 export GOPATH=$HOME/Code/Go
 export PATH=$GOPATH/bin:$PATH
 
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export RUFF_HOME=~/Library/ruff-sdk-mac-1.1.0
+export PATH="$PATH:$RUFF_HOME/bin"
+
+export PATH=~/bin:$PATH
+
+export PATH=$(brew --prefix curl)/bin:$PATH
+
+#source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+unsetopt NOMATCH
+
+# mount the android file image
+function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }
+
+# unmount the android file image
+function umountAndroid() { hdiutil detach /Volumes/android; }
 

@@ -31,7 +31,6 @@ apps=(
     mackup
     macvim
     mysql
-    android-platform-tools
     python
     ruby
     svn
@@ -39,6 +38,9 @@ apps=(
     wget
     zsh
 )
+
+brew install "${apps[@]}"
+brew cleanup
 
 caskapps=(
     android-studio
@@ -69,10 +71,8 @@ caskapps=(
     youdao
 )
 
-brew install "${apps[@]}"
-brew tap caskroom/versions
-brew cask update
-brew cask install --appdir="/Applications" "${caskapps[@]}"
-brew cleanup
-brew cask cleanup
+# brew tap caskroom/versions
+# brew cask update
+# brew cask install --appdir="/Applications" "${caskapps[@]}"
+# brew cask cleanup
 

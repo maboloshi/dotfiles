@@ -1,5 +1,30 @@
 "*":
+  Zen:
+    showWordCount: "Right"
+    softWrap: true
+    typewriter: true
+  core:
+    disabledPackages: [
+      "tidy-markdown"
+    ]
+  editor:
+    fontSize: 15
+    invisibles: {}
+    scrollPastEnd: true
   "exception-reporting":
     userId: "cf86ea80-fc17-dc65-96c0-8322ce156f19"
+  "git-plus": {}
+  "markdown-preview": {}
+  "markdown-preview-plus": {}
+  "markdown-writer":
+    siteEngine: "html"
+  "tidy-markdown":
+    ensureFirstHeaderIsH1: false
+  typewriter: {}
+  "vim-mode":
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
+"source.gfm":
+  editor:
+    softWrap: true

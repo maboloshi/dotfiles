@@ -84,7 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vim="mvim --remote-tab-silent"
+#alias vim="mvim --remote-tab-silent"
+alias vim="mvim"
 alias gsup="git submodule foreach git pull --rebase origin master"
 
 ff() { find . -type f -iname "*$1*";}
@@ -106,13 +107,14 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export ANDROID_JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-export ANDROID_SDK=/Users/coderzh/Library/Android/sdk
-export PATH=$ANDROID_SDK/platform-tools:$PATH
+export ANDROID_SDK_ROOT=/Users/coderzh/Library/Android/sdk
+export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 export ANDROID_BUILD_TOOLS=~/Library/Android/sdk/build-tools/23.0.2
 export PATH=$ANDROID_BUILD_TOOLS:$PATH
 
-export ANDROID_NDK=~/Library/Android/android-ndk-r9d
+export ANDROID_NDK=~/Library/Android/android-ndk-r10e
 export PATH=$ANDROID_NDK:$PATH
 
 export GOPATH=$HOME/Code/Go
@@ -122,6 +124,7 @@ export RUFF_HOME=~/Library/ruff-sdk-mac-1.1.0
 export PATH="$PATH:$RUFF_HOME/bin"
 
 export PATH=~/bin:$PATH
+export PATH=~/bin/depot_tools:$PATH
 
 export PATH=$(brew --prefix curl)/bin:$PATH
 

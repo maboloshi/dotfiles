@@ -84,9 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#alias vim="mvim --remote-tab-silent"
-alias vim="mvim"
-alias gsup="git submodule foreach git pull --rebase origin master"
+# alias vim="mvim --remote-tab-silent"
+# alias gsup="git submodule foreach git pull --rebase origin master"
 
 ff() { find . -type f -iname "*$1*";}
 fd() { find . -type d -iname "*$1*";}
@@ -104,7 +103,7 @@ export PATH=$COCOS_X_ROOT:$PATH
 export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export ANDROID_JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export ANDROID_SDK_ROOT=/Users/coderzh/Library/Android/sdk
@@ -138,3 +137,7 @@ function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Vo
 # unmount the android file image
 function umountAndroid() { hdiutil detach /Volumes/android; }
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/coderzh/.sdkman"
+[[ -s "/Users/coderzh/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/coderzh/.sdkman/bin/sdkman-init.sh"

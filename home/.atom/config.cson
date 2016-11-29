@@ -11,6 +11,7 @@
     fontSize: 15
     invisibles: {}
     scrollPastEnd: true
+    tabLength: 4
   "exception-reporting":
     userId: "cf86ea80-fc17-dc65-96c0-8322ce156f19"
   "git-plus": {}

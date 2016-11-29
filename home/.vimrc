@@ -2,7 +2,7 @@ filetype off
 
 colo desert
 set guifont=Menlo\ Regular\ for\ Powerline:h14
-
+execute pathogen#infect('pathogen/{}') 
 set nobackup
 set guitablabel=%t
 
@@ -28,6 +28,7 @@ set smartcase
 set hid
 
 set nowrap
+set noswapfile
 syn on
 set confirm
 
@@ -45,6 +46,14 @@ set wildmenu
 set foldmethod=syntax
 " 启动时关闭折叠代码
 set nofoldenable
+
+set laststatus=2
+" 高亮当前行
+set cursorline
+"set cursorcolumn
+" 高亮搜索结果
+set hlsearch
+set backspace=indent,eol,start
 
 language messages zh_CN.utf-8
 
@@ -73,14 +82,18 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
+Plugin 'moll/vim-node'
+Plugin 'mileszs/ack.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -159,7 +172,7 @@ set completeopt-=preview
 let g:ycm_min_num_of_chars_for_completion=1
 " 禁止缓存匹配项，每次都重新生成匹配项
 let g:ycm_cache_omnifunc=0
-" 语法关键字补全         
+" 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 
 " UltiSnips 的 tab 键与 YCM 冲突，重新设定
@@ -168,7 +181,7 @@ let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-nmap <Leader>fl :NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
 " 设置NERDTree子窗口位置
@@ -180,20 +193,32 @@ let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
 
+nnoremap <Leader>i :ib<CR>
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
 " 显示/隐藏 MiniBufExplorer 窗口
-map <Leader>bl :MBEToggle<cr>
+"map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
-map <C-Tab> :MBEbn<cr>
-map <C-S-Tab> :MBEbp<cr>
+"map <C-Tab> :MBEbn<cr>
+"map <C-S-Tab> :MBEbp<cr>
 
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字
 nnoremap <Leader>sf :CtrlSF<CR>
 
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-set laststatus=2
-" 高亮当前行
-set cursorline
-"set cursorcolumn
-" 高亮搜索结果
-set hlsearch
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

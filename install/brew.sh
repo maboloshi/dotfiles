@@ -56,7 +56,6 @@ caskapps=(
     karabiner
     keepassx
     kindle
-    macdown
     pomotodo
     pycharm-ce
     qq
@@ -67,7 +66,6 @@ caskapps=(
     vagrant
     virtualbox
     vlc
-    wiznote
     youdao
 )
 

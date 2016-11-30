@@ -4,6 +4,8 @@ colo desert
 set guifont=Menlo\ Regular\ for\ Powerline:h14
 execute pathogen#infect('pathogen/{}') 
 set nobackup
+set noswapfile
+"set directory=~/.vim/swap/
 set guitablabel=%t
 
 set smartindent
@@ -94,6 +96,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'fholgado/minibufexpl.vim'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'octol/vim-cpp-enhanced-highlight'

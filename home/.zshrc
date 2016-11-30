@@ -84,8 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# alias vim="mvim --remote-tab-silent"
-# alias gsup="git submodule foreach git pull --rebase origin master"
+alias vim="mvim --remote-tab-silent"
+alias gsup="git submodule foreach git pull --rebase origin master"
 
 ff() { find . -type f -iname "*$1*";}
 fd() { find . -type d -iname "*$1*";}
@@ -106,7 +106,7 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export ANDROID_JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-export ANDROID_SDK_ROOT=/Users/coderzh/Library/Android/sdk
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export PATH=$ANDROID_SDK_ROOT/tools:$PATH
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
 
@@ -114,6 +114,7 @@ export ANDROID_BUILD_TOOLS=~/Library/Android/sdk/build-tools/23.0.2
 export PATH=$ANDROID_BUILD_TOOLS:$PATH
 
 export ANDROID_NDK=~/Library/Android/android-ndk-r10e
+export NDKROOT=~/Library/Android/android-ndk-r10e
 export PATH=$ANDROID_NDK:$PATH
 
 export GOPATH=$HOME/Code/Go
@@ -128,8 +129,12 @@ export PATH=~/bin/depot_tools:$PATH
 export PATH=$(brew --prefix curl)/bin:$PATH
 
 #source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export GRADLE_HOME=~/Library/gradle-2.10
+export PATH=$GRADLE_HOME/bin:$PATH
 
 unsetopt NOMATCH
+
+alias iTMSTransporter='`xcode-select --print-path`/../Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter'
 
 # mount the android file image
 function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }

@@ -15,11 +15,11 @@ fi
 
 brew tap homebrew/versions
 brew update
-brew upgrade --all
+brew upgrade
 
 # Install packages
 apps=(
-    caskroom/cask/brew-cask
+#    caskroom/cask/brew-cask
     cmake
     coreutils
     findutils
@@ -37,6 +37,11 @@ apps=(
     vim
     wget
     zsh
+    htop
+    bazel
+    ack
+    tree
+    tmux
 )
 
 brew install "${apps[@]}"

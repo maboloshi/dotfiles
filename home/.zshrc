@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 export PATH="$(brew --prefix)/bin:$PATH"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -84,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vi="/usr/local/bin/vim"
 alias vim="mvim --remote-tab-silent"
 alias gsup="git submodule foreach git pull --rebase origin master"
 

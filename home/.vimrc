@@ -70,6 +70,7 @@ nmap <F3> :tabnext<CR>
 nmap <F5> :e<CR>
 
 au BufRead,BufNewFile *.lh set filetype=lua
+au BufRead,BufNewFile BUILD set filetype=python
 au BufRead,BufNewFIle *.{md,mkd,mkdn,mark*} set filetype=markdown
 
 set nocompatible              " be iMproved, required
@@ -96,6 +97,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'fholgado/minibufexpl.vim'
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -168,7 +170,7 @@ let g:ycm_collect_identifiers_from_tags_files=1
 " 引入 C++ 标准库tags
 "set tags+=/data/misc/software/misc./vim/stdcpp.tags
 " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-inoremap <leader>; <C-x><C-o>
+" inoremap <leader>; <C-x><C-o>
 " 补全内容不以分割子窗口形式出现，只显示补全列表
 set completeopt-=preview
 " 从第一个键入字符就开始罗列匹配项
@@ -195,6 +197,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
+let NERDTreeIgnore=['^bazel-']
 
 nnoremap <Leader>i :ib<CR>
 nnoremap <Leader>l :ls<CR>
@@ -225,3 +228,5 @@ set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+

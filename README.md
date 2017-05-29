@@ -1,17 +1,25 @@
 # dotfiles
 
-When on a new mac:
+### MacOS
 
 ```
 # 1. Install XCode
 sudo softwareupdate -i -a
 xcode-select --install
 
-# 2. Install Software
-cd ~
-git clone https://github.com/coderzh/dotfiles.git
-source dotfiles/install.sh
+# 2. Install
 
-# 3. Restore dotfiles
-mackup restore
+bash -c "$(curl -LsS https://raw.githubusercontent.com/coderzh/dotfiles/master/setup.sh)"
+
 ```
+
+### Ubuntu
+
+```
+bash -c "$(wget -qO - https://raw.githubusercontent.com/coderzh/dotfiles/master/setup.sh)"
+```
+
+### Config
+
+See: [setup.cfg](https://raw.github.com/alrra/dotfiles/master/src/os/setup.sh)
+

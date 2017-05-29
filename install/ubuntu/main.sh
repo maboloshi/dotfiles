@@ -10,11 +10,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n • Execute ubuntu commands\n\n"
 execute_commands "${UBUNTU_COMMANDS[@]}"
 
-update
-upgrade
 
 print_in_purple "\n • APT-GET\n\n"
+update
+upgrade
 install_all_packages ${APT_GET_PACKAGES[@]}
-
-print_in_purple "\n • Cleanup\n\n"
 autoremove

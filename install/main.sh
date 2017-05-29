@@ -8,3 +8,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n • Installs\n\n"
 
 "./$(get_os)/main.sh"
+
+./oh-my-zsh.sh
+./npm.sh
+./vim.sh
+./pip.sh
+

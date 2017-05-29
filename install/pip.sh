@@ -1,10 +1,23 @@
-pip install --upgrade pip
-pip install powerline-status
-pip install MySQL-python
-pip install tornado
-pip install torndb
-pip install pycrypto
-pip install mock
-pip install pyroute2
-pip install web.py
+#!/bin/bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")" \
+    && . "../utils.sh" \
+    && . "../setup.conf"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+
+    print_in_purple "\n   pip\n\n"
+
+    for i in "${PIP_PACKAGES[@]}"; do
+        execute \
+            "pip install $1" \
+            "$1"
+    done
+
+}
+
+main
+
 

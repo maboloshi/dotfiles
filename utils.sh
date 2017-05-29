@@ -417,8 +417,26 @@ execute_commands() {
 
 copy_os_files() {
 
-    execute \
-        "sudo cp -r $(get_os)/* /" \
-        "Copy $(get_os) files"
+    if [ -d $(get_os) ]; then
+        execute \
+            "sudo cp -r $(get_os)/* /" \
+            "Copy $(get_os) files"
+    fi
+
+}
+
+copy_files_to_home() {
+
+    for i in "$@"; do
+        if [ -d "$i" ]; then
+            execute \
+                "cp -r $i/* $HOME/$i" \
+                "$i/* → $HOME/$i"
+        elif [ -f "$i" ]; then
+            execute \
+                "cp $i $HOME/$i" \
+                "$i → $HOME/$i"
+        fi
+    done
 
 }

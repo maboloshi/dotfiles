@@ -8,12 +8,12 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 main() {
 
-    print_in_purple "\n   pip\n\n"
+    print_in_purple "\n • Pip\n\n"
 
     for i in "${PIP_PACKAGES[@]}"; do
         execute \
-            "pip install $1" \
-            "$1"
+            "pip install $i" \
+            "install $i"
     done
 
 }

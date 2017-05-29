@@ -9,7 +9,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 install_npm_packages() {
 
     for i in "$@"; do
-        execute "sudo npm install --global --silent $i" $i
+        execute \
+            "sudo npm install --global --silent $i" \
+            "install $i"
     done
 
 }
@@ -18,7 +20,7 @@ install_npm_packages() {
 
 main() {
 
-    print_in_purple "\n   npm\n\n"
+    print_in_purple "\n • NPM\n\n"
 
     execute \
         "npm config set registry https://registry.npm.taobao.org" \

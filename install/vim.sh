@@ -18,12 +18,11 @@ install_plugins() {
     # Install plugins.
 
     if [ ! -d "$VUNDLE_DIR" ]; then
-        echo $VUNDLE_DIR
 
         execute \
             "git clone --quiet '$VUNDLE_GIT_REPO_URL' '$VUNDLE_DIR' \
                 && printf '\n' | vim +PluginInstall +qall" \
-            "Install Vundle" \
+            "Install Vundle and Plugins" \
             || return 1
 
     fi
@@ -50,7 +49,7 @@ update_plugins() {
 
 main() {
 
-    print_in_purple "\n   Vim\n\n"
+    print_in_purple "\n • Vim\n\n"
 
     printf "\n"
 

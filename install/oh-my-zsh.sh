@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 main() {
 
-    print_in_purple "\n    Oh-My-Zsh\n\n"
+    print_in_purple "\n • Oh-My-Zsh\n\n"
 
     execute \
         "sudo chsh -s $(which zsh)" \

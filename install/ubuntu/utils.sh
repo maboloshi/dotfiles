@@ -37,7 +37,9 @@ install_package() {
     declare -r PACKAGE="$1"
 
     if ! package_is_installed "$PACKAGE"; then
-        execute "sudo apt-get install --allow-unauthenticated -qqy $PACKAGE"
+        execute \
+            "sudo apt-get install --allow-unauthenticated -qqy $PACKAGE" \
+            "install $PACKAGE"
         #                                      suppress output ─┘│
         #            assume "yes" as the answer to all prompts ──┘
     else
@@ -74,7 +76,6 @@ upgrade() {
 install_all_packages() {
 
     for i in "$@"; do
-        print_in_purple "\n   $i\n\n"
         install_package "$i"
     done
 

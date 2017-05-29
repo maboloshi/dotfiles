@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-export PATH="$(brew --prefix)/bin:$PATH"
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -85,66 +83,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vi="/usr/local/bin/vim"
-alias vim="mvim --remote-tab-silent"
 alias gsup="git submodule foreach git pull --rebase origin master"
 
 ff() { find . -type f -iname "*$1*";}
 fd() { find . -type d -iname "*$1*";}
 findtext() { find .  -iname "$1" | xargs grep -n "$2";}
 
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
-# Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/Applications/Cocos/Cocos2d-x
-export PATH=$COCOS_X_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export ANDROID_JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
-export PATH=$ANDROID_SDK_ROOT/tools:$PATH
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-export ANDROID_BUILD_TOOLS=~/Library/Android/sdk/build-tools/23.0.2
-export PATH=$ANDROID_BUILD_TOOLS:$PATH
-
-export ANDROID_NDK=~/Library/Android/android-ndk-r10e
-export NDKROOT=~/Library/Android/android-ndk-r10e
-export PATH=$ANDROID_NDK:$PATH
-
-export GOPATH=$HOME/Code/Go
-export PATH=$GOPATH/bin:$PATH
-
-export RUFF_HOME=~/Library/ruff-sdk-mac-1.1.0
-export PATH="$PATH:$RUFF_HOME/bin"
-
-export PATH=~/bin:$PATH
-export PATH=~/bin/depot_tools:$PATH
-
-export PATH=$(brew --prefix curl)/bin:$PATH
-
-#source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-export GRADLE_HOME=~/Library/gradle-2.10
-export PATH=$GRADLE_HOME/bin:$PATH
-
-unsetopt NOMATCH
-
-alias iTMSTransporter='`xcode-select --print-path`/../Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter'
-
-# mount the android file image
-function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }
-
-# unmount the android file image
-function umountAndroid() { hdiutil detach /Volumes/android; }
+if [ -r ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
 
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/coderzh/.sdkman"
-[[ -s "/Users/coderzh/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/coderzh/.sdkman/bin/sdkman-init.sh"

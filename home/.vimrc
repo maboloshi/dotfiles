@@ -225,6 +225,7 @@ nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>sf :CtrlSF<CR>
 
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

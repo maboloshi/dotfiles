@@ -21,5 +21,5 @@ bash -c "$(wget -qO - https://raw.githubusercontent.com/coderzh/dotfiles/master/
 
 ### Config
 
-See: [setup.cfg](https://raw.githubusercontent.com/coderzh/dotfiles/master/setup.cfg)
+See: [setup.conf](https://raw.githubusercontent.com/coderzh/dotfiles/master/setup.conf)
 

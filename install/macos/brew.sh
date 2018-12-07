@@ -28,8 +28,6 @@ apps=(
     go
     hugo
     mercurial
-    mackup
-    macvim
     mysql
     python
     ruby
@@ -38,10 +36,8 @@ apps=(
     wget
     zsh
     htop
-    bazel
     ack
     tree
-    tmux
 )
 
 brew install "${apps[@]}"

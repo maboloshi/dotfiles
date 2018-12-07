@@ -1,10 +1,7 @@
 [core]
 	autocrlf = false
 	editor = vim
-[github]
-    user = coderzh
-[user]
-	name = coderzh
-	email = coderzh@gmail.com
 [push]
 	default = simple
+[include]
+    path = ~/.gitconfig.local
